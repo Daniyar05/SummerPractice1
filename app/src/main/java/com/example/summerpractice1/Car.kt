@@ -3,6 +3,7 @@ package com.example.summerpractice1
 import java.time.Year
 
 open class Car{
+    var numberCarInRace: Int?=null
     val model: String
     val brend: String
     val yearRelease: Year
