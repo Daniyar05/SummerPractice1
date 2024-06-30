@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
                 }
                 header?.text = Tools().race(cars, "")
             }
-            catch (e: Exception){
-                header?.text = e.message
+            catch (e: NumberFormatException){
+                header?.text = "Пожалуйста, введите число"
             }
 
 
