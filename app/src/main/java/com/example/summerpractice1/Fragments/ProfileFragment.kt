@@ -21,9 +21,19 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     fun viewButton() {
         binding?.run {
             this.button.setOnClickListener {
-                if (this.textEt.text.toString() != "") findNavController().navigate(R.id.navigation_main)
-                else {
-                    Snackbar.make(it, "Для отправки текста требуется заполнить поле", Snackbar.LENGTH_SHORT).setTextColor(Color.RED).show()
+                if (this.textEt.text.toString() != "") {
+                    val bundle = Bundle()
+                    bundle.putString("TEXT", textEt.text.toString())
+                    findNavController().navigate(
+                        R.id.navigation_main,
+                        args = bundle
+                    )
+                } else {
+                    Snackbar.make(
+                        it,
+                        "Для отправки текста требуется заполнить поле",
+                        Snackbar.LENGTH_SHORT
+                    ).setTextColor(Color.RED).show()
                 }
             }
         }
@@ -33,4 +43,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         super.onDestroy()
         binding = null
     }
+
+
 }

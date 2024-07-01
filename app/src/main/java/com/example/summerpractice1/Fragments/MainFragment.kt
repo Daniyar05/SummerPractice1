@@ -14,10 +14,12 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMainBinding.bind(view)
+        binding?.textView?.text = arguments?.getString("TEXT")
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
     }
+
 }
