@@ -13,9 +13,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
-//        viewBinding = ActivityMainNewBinding.inflate(layoutInflater)
-//        setContentView(viewBinding?.root)
         viewBinding = ActivityMainMenuBinding.inflate(layoutInflater).also {
             setContentView(it.root)
         }
