@@ -25,7 +25,6 @@ class FilmHolder(
         binding.run {
             tvName.text = film.name
             tvShortInfo.text = film.shortInfo
-//            tvLongInfo.text = film.longInfo
 
             glide
                 .load(film.url)

@@ -28,12 +28,10 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
                 list = FilmRepository.films,
                 glide = Glide.with(this@DashboardFragment),
                 onClick = {
-
                     findNavController().navigate(
                         R.id.navigation_film,
                         args = FilmFragment.bundle(id = it.id)
                     )
-
                 }
             )
 

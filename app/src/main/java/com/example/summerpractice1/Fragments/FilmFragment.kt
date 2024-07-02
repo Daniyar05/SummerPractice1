@@ -40,9 +40,7 @@ class FilmFragment : Fragment(R.layout.fragment_film) {
                         )
                 ).into(ivImage)
             imageBack.setOnClickListener {
-                findNavController().navigate(
-                    R.id.navigation_dashboard,
-                )
+                findNavController().navigateUp()
             }
         }
     }
