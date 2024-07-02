@@ -1,20 +1,29 @@
 package com.example.summerpractice1
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
+import com.example.summerpractice1.databinding.ActivityMainMenuBinding
 
 class MainActivity : AppCompatActivity() {
+    private var viewBinding: ActivityMainMenuBinding? = null
+    private var controller: NavController? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        viewBinding = ActivityMainMenuBinding.inflate(layoutInflater).also {
+            setContentView(it.root)
+        }
+        initView()
+    }
+
+    fun initView() {
+        controller =
+            (supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main_menu) as NavHostFragment).navController
+        controller?.let { navController ->
+            viewBinding?.navView?.setupWithNavController(navController)
         }
     }
 }
