@@ -15,7 +15,11 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.example.summerpractice1.Fragments.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_navigation_film"
+            app:destination="@id/navigation_film" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
@@ -40,9 +44,15 @@
         android:name="com.example.summerpractice1.Fragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+
     <fragment
         android:id="@+id/navigation_settings"
         android:name="com.example.summerpractice1.Fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/navigation_film"
+        android:name="com.example.summerpractice1.Fragments.FilmFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_film" />
 </navigation>
